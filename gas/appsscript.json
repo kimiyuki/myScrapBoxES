@@ -1,0 +1,14 @@
+{
+  "timeZone": "Asia/Tokyo",
+  "dependencies": {
+    "enabledAdvancedServices": [{
+      "userSymbol": "BigQuery",
+      "serviceId": "bigquery",
+      "version": "v2"
+    }]
+  },
+  "executionApi": {
+      "access": "ANYONE"
+  },
+  "exceptionLogging": "STACKDRIVER"
+}

@@ -1,0 +1,27 @@
+{
+  "tokenizer": {
+          "sudachi_tokenizer": {
+            "mode":"search",
+            "type": "sudachi_tokenizer",
+            "resources_path": "/usr/share/elasticsearch/plugins/analysis-sudachi"
+          }
+        },
+  "analyzer": {
+          "sudachi_analyzer": {
+            "filter": [ "my_posfilter" ],
+            "tokenizer": "sudachi_tokenizer",
+            "type": "custom"
+          }
+       },
+  "filter":{
+         "my_posfilter":{
+          "type":"sudachi_part_of_speech",
+          "stoptags":[
+           "助詞",
+           "助動詞",
+           "補助記号,句点",
+           "補助記号,読点"
+          ]
+         }
+  }
+}

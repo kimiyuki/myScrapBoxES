@@ -1,0 +1,87 @@
+{
+  "settings":{
+    "index" : {
+      "number_of_shards":5,
+      "number_of_replicas":1
+    }
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "accessed": {
+          "type": "long"
+        },
+        "commitId": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "created": {
+          "type": "date"
+        },
+        "descriptions": {
+          "type": "text",
+          "fielddata": "true",
+          "analyzer":"sudachi",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "image": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "linked": {
+          "type": "long"
+        },
+        "pin": {
+          "type": "long"
+        },
+        "title": {
+          "type": "text",
+          "fielddata": "true",
+          "analyzer":"sudachi",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "updated": {
+          "type": "date"
+        },
+        "user": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "views": {
+          "type": "long"
+        }
+}}}}
