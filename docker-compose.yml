@@ -1,0 +1,42 @@
+version: '3.2' #its depends on docker engine 
+services: #docker processes?
+  elasticsearch:
+    build: ./es 
+    container_name: es2
+    volumes:
+    #  - type: volume
+    #    source: es-data
+    #    target: /usr/share/elasticsearch/data
+    #    volume:
+    #      nocopy: true
+      - type: bind
+        source: ./es/config
+        target: /usr/share/elasticsearch/config
+
+    environment: 
+      - "TZ=Asia/Tokyo"
+    ports:
+      - 9200:9200
+    expose: 
+      - 9300
+      - 9200
+    ulimits: #number of file descripter
+      nofile:
+        soft: 65536
+        hard: 65536
+
+  kibana:
+    build: ./kibana
+    container_name: kibana1
+    environment: 
+      - "TZ=Asia/Tokyo"
+    depends_on:
+      - elasticsearch
+    links:
+      - elasticsearch
+    ports:
+      - 5601:5601
+
+volumes:
+  es-data:
+    driver: local

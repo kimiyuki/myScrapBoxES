@@ -12,13 +12,7 @@
           "type": "long"
         },
         "commitId": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+          "type": "text"
         },
         "created": {
           "type": "date"
@@ -26,31 +20,16 @@
         "descriptions": {
           "type": "text",
           "fielddata": "true",
-          "analyzer":"sudachi",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+          "analyzer":"sudachi"
         },
         "id": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+          "type": "text"
         },
         "image": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+          "type": "text"
+        },
+        "tags":{
+          "type":"text"
         },
         "linked": {
           "type": "long"
@@ -61,25 +40,13 @@
         "title": {
           "type": "text",
           "fielddata": "true",
-          "analyzer":"sudachi",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+          "analyzer":"sudachi"
         },
         "updated": {
           "type": "date"
         },
         "user": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+          "type": "text"
         },
         "views": {
           "type": "long"
